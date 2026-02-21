@@ -88,4 +88,32 @@ jobsCard.addEventListener("click", function (event) {
     if (currentStatus === "rejected-btn") renderList(rejectedList);
     calculateCount();
   }
-})
+}
+// Step-7 {rejected button logic}
+  else if (event.target.classList.contains("rejected-btn")) {
+    const cardInfo = { companyName, position, location, description, status: "REJECTED" };
+
+    const jobExist = rejectedList.find(item => item.companyName === companyName);
+    if (!jobExist) rejectedList.push(cardInfo);
+
+    // Remove from interview if was there (toggle)
+    interviewList = interviewList.filter(item => item.companyName !== companyName);
+
+    card.querySelector(".status").innerText = "REJECTED";
+    card.querySelector(".status").className = "status inline-block mb-3 px-3 py-1 bg-red-100 text-red-600 text-sm font-semibold rounded-md";
+
+    if (currentStatus === "interview-btn") renderList(interviewList);
+    if (currentStatus === "rejected-btn") renderList(rejectedList);
+    calculateCount();
+  }
+
+  // Step-8 {delete button logic}
+  else if (event.target.classList.contains("delete-btn")) {
+    interviewList = interviewList.filter(item => item.companyName !== companyName);
+    rejectedList = rejectedList.filter(item => item.companyName !== companyName);
+    card.remove();
+    if (currentStatus === "interview-btn") renderList(interviewList);
+    if (currentStatus === "rejected-btn") renderList(rejectedList);
+    calculateCount();
+  }
+});
