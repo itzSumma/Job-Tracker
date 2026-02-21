@@ -16,7 +16,7 @@
 
 <body class="min-h-screen py-10">
 
-    <div class="w-[95%] sm:w-[90%] max-w-3xl mx-auto">
+    <div class="w-[90%] sm:w-[95%] max-w-6xl mx-auto">
 
         <!-- ── Title ── -->
         <h1 class="text-2xl sm:text-4xl font-bold text-slate-800 mb-4 sm:mb-6">Job Application Tracker</h1>
@@ -39,7 +39,7 @@
 
         <!-- ── Available Jobs Section ── -->
         <div class="flex justify-between items-center mb-3">
-            <h2 class="text-xl font-semibold text-slate-800">Available Jobs</h2>
+            <h2 class="text-xl font-semibold text-black">Available Jobs</h2>
             <span id="jobs-count" class="text-md font-semibold text-gray-400">8 jobs</span>
         </div>
 
@@ -62,19 +62,14 @@
 
             <!-- Card 1 -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-md"></i></button>
                 <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">Mobile First Corp</h3>
                 <p class="position text-base text-gray-500 mb-2">React Native Developer</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
-                    <span class="location">Remote
-                        •
-                        Full-time
-                        •
-                        $130,000 - $175,000 </span>
-
+                    <span class="location">Remote • Full-time • $130,000 - $175,000</span>
                 </p>
                 <span
                     class="status inline-block mb-3 px-3 py-1 bg-gray-100 text-gray-800 text-sm font-semibold rounded-md">NOT
@@ -84,27 +79,22 @@
                     product teams to ship exceptional experiences.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-md"></i></button>
                 <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">WebFlow Agency</h3>
                 <p class="position text-base text-gray-500 mb-2">Web Designer & Developer</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
-                    <span class="location"> Los Angeles, CA
-                        •
-                        Part-time
-                        •
-                        $80,000 - $120,000</span>
-
+                    <span class="location">Los Angeles, CA • Part-time • $80,000 - $120,000</span>
                 </p>
                 <span
                     class="status inline-block mb-3 px-3 py-1 bg-gray-100 text-gray-800 text-sm font-semibold rounded-md">NOT
@@ -114,26 +104,22 @@
                     attention to detail are non-negotiable.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
             <!-- Card 3 -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-md"></i></button>
                 <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">DataViz Solutions</h3>
                 <p class="position text-base text-gray-500 mb-2">Data Visualization Specialist</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
-                    <span class="location">Boston, MA
-                        •
-                        Full-time
-                        •
-                        $125,000 - $165,000</span>
+                    <span class="location">Boston, MA • Full-time • $125,000 - $165,000</span>
                 </p>
                 <span
                     class="status inline-block mb-3 px-3 py-1 bg-gray-100 text-gray-800 text-sm font-semibold rounded-md">NOT
@@ -143,26 +129,22 @@
                     on data-driven products and dashboards.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
             <!-- Card 4 -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-md"></i></button>
                 <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">CloudFirst Inc</h3>
                 <p class="position text-base text-gray-500 mb-2">Backend Developer</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
-                    <span class="location">Seattle, WA
-                        •
-                        Full-time
-                        •
-                        $140,000 - $190,000</span>
+                    <span class="location">Seattle, WA • Full-time • $140,000 - $190,000</span>
                 </p>
                 <span
                     class="status inline-block mb-3 px-3 py-1 bg-gray-100 text-gray-800 text-sm font-semibold rounded-md">NOT
@@ -172,26 +154,22 @@
                     that power enterprise-level client applications.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
-            <!-- Card 5 -->
+            <!-- Card 5 ✅ FIXED -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-md"></i></button>
                 <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">Innovation Labs</h3>
                 <p class="position text-base text-gray-500 mb-2">UI/UX Engineer</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
-                    <span class="location">Austin, TX
-                        •
-                        Full-time
-                        •
-                        $110,000 - $150,000</span>
+                    <span class="location">Austin, TX • Full-time • $110,000 - $150,000</span>
                 </p>
                 <span
                     class="status inline-block mb-3 px-3 py-1 bg-gray-100 text-gray-800 text-sm font-semibold rounded-md">NOT
@@ -201,27 +179,22 @@
                     design system from concept to production with real user impact.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
             <!-- Card 6 -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-md"></i></button>
-                <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">MegaCorp Solutions
-                </h3>
+                <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">MegaCorp Solutions</h3>
                 <p class="position text-base text-gray-500 mb-2">JavaScript Developer</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
-                    <span class="location">New York, NY
-                        •
-                        Full-time
-                        •
-                        $130,000 - $170,00</span>
+                    <span class="location">New York, NY • Full-time • $130,000 - $170,000</span>
                 </p>
                 <span
                     class="status inline-block mb-3 px-3 py-1 bg-gray-100 text-gray-700 text-sm font-semibold rounded-md">NOT
@@ -231,26 +204,22 @@
                     opportunities included. Hybrid work schedule available for all employees.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
             <!-- Card 7 -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-sm"></i></button>
                 <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">StartupXYZ</h3>
                 <p class="position text-base text-gray-500 mb-2">Full Stack Engineer</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
-                    <span class="location">Remote
-                        •
-                        Full-time
-                        •
-                        $120,000 - $160,000</span>
+                    <span class="location">Remote • Full-time • $120,000 - $160,000</span>
                 </p>
                 <span
                     class="status inline-block mb-3 px-3 py-1 bg-gray-100 text-gray-800 text-sm font-semibold rounded-md">NOT
@@ -260,20 +229,19 @@
                     benefits included. Ship features that matter from day one.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
             <!-- Card 8 -->
             <div
-                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer">
+                class="card p-4 sm:p-5 relative bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-green-300 active:shadow-md active:border-green-300 transition-all duration-200 cursor-pointer">
                 <button
-                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 text-gray-400 hover:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
+                    class="delete-btn absolute top-3 right-3 w-10 h-10 rounded-full bg-gray-100 hover:bg-red-100 active:bg-red-100 text-gray-400 hover:text-red-400 active:text-red-400 transition-all duration-200 flex items-center justify-center border-none"><i
                         class="fa-solid fa-trash-can pointer-events-none text-md"></i></button>
-                <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">TechCorp Industries
-                </h3>
+                <h3 class="company-name font-semibold text-black text-lg sm:text-xl mb-0.5 pr-10">TechCorp Industries</h3>
                 <p class="position text-base text-gray-500 mb-2">Senior Frontend Developer</p>
                 <p class="text-base text-gray-400 mb-2 flex flex-wrap gap-x-1">
                     <span class="location"></span>
@@ -286,9 +254,9 @@
                     products that reach millions of users globally. TypeScript expertise a must.</p>
                 <div class="flex gap-2 flex-wrap">
                     <button
-                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+                        class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
                     <button
-                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+                        class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
                 </div>
             </div>
 
