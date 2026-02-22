@@ -1,9 +1,9 @@
-// Step-1{make empty arrays}
+// Step-1 {make empty arrays}
 let interviewList = [];
 let rejectedList = [];
 let currentStatus = "all-btn";
 
-// Step-1 {get all the ids}
+// Step-1.2 {get all the ids}
 const total = document.getElementById("totalcount");
 const interviewCount = document.getElementById("interviewcount");
 const rejectedCount = document.getElementById("rejectedcount");
@@ -20,30 +20,31 @@ function calculateCount() {
   interviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectedList.length;
 
-  // Always update jobs-count label based on current active tab
+  // Calculation Updated
+  const totalJobs = jobsCard.children.length;
   if (currentStatus === "all-btn") {
-    jobsCountLabel.innerText = jobsCard.children.length + " jobs";
+    jobsCountLabel.innerText = totalJobs + " jobs";
   } else if (currentStatus === "interview-btn") {
-    jobsCountLabel.innerText = interviewList.length + " jobs";
+    jobsCountLabel.innerText = interviewList.length + " of " + totalJobs + " jobs";
   } else if (currentStatus === "rejected-btn") {
-    jobsCountLabel.innerText = rejectedList.length + " jobs";
+    jobsCountLabel.innerText = rejectedList.length + " of " + totalJobs + " jobs";
   }
 }
 calculateCount();
 
-// Step-3 {Buttons - toggle method}
+// Step-3 {Buttons  Toggle method}
 function toggleStyle(id) {
-  // Reset all to inactive
+  // Reset all BAckgground Colors
   allBtn.className = "text-md px-4 py-2 rounded-sm bg-white border border-gray-300 text-gray-500 hover:bg-gray-50 active:bg-gray-50 hover:border-gray-400 active:border-gray-400 hover:text-gray-700 active:text-gray-700 transition-colors";
   interviewBtn.className = "text-md px-4 py-2 rounded-sm bg-white border border-gray-300 text-gray-500 hover:bg-gray-50 active:bg-gray-50 hover:border-gray-400 active:border-gray-400 hover:text-gray-700 active:text-gray-700 transition-colors";
   rejectedBtn.className = "text-md px-4 py-2 rounded-sm bg-white border border-gray-300 text-gray-500 hover:bg-gray-50 active:bg-gray-50 hover:border-gray-400 active:border-gray-400 hover:text-gray-700 active:text-gray-700 transition-colors";
 
-  // Set clicked button as active
+  // Set clicked button Background Colors 
   const selected = document.getElementById(id);
   selected.className = "text-md px-4 py-2 rounded-sm bg-blue-600 hover:bg-blue-700 active:bg-blue-700 text-white transition-colors";
   currentStatus = id;
 
-  // Step-4 {filtering cards show/hide}
+  // Step-4 {filtering cards (show/hide)}
   if (id === "interview-btn") {
     jobsCard.classList.add("hidden");
     filterSection.classList.remove("hidden");
@@ -60,8 +61,7 @@ function toggleStyle(id) {
   calculateCount();
 }
 
-
-// Step-5 {event-delegation on jobs-card}
+// Step-5 {Event-Delegation for job-cards}
 jobsCard.addEventListener("click", function (event) {
   const card = event.target.closest(".card");
   if (!card) return;
@@ -71,14 +71,14 @@ jobsCard.addEventListener("click", function (event) {
   const location = card.querySelector(".location").innerText;
   const description = card.querySelector(".description").innerText;
 
-  // Step-6 {interview button logic}
+  // Step-6 {Interview button logic}
   if (event.target.classList.contains("interview-btn")) {
     const cardInfo = { companyName, position, location, description, status: "INTERVIEW" };
 
     const jobExist = interviewList.find(item => item.companyName === companyName);
     if (!jobExist) interviewList.push(cardInfo);
 
-    // Remove from rejected if was there (toggle)
+    // Remove rejected button if (Toggle)
     rejectedList = rejectedList.filter(item => item.companyName !== companyName);
 
     card.querySelector(".status").innerText = "INTERVIEW";
@@ -88,15 +88,15 @@ jobsCard.addEventListener("click", function (event) {
     if (currentStatus === "rejected-btn") renderList(rejectedList);
     calculateCount();
   }
-}
-// Step-7 {rejected button logic}
+
+  // Step-7 {Rejected button logic}
   else if (event.target.classList.contains("rejected-btn")) {
     const cardInfo = { companyName, position, location, description, status: "REJECTED" };
 
     const jobExist = rejectedList.find(item => item.companyName === companyName);
     if (!jobExist) rejectedList.push(cardInfo);
 
-    // Remove from interview if was there (toggle)
+    // Remove  Interview  button if  (Toggle)
     interviewList = interviewList.filter(item => item.companyName !== companyName);
 
     card.querySelector(".status").innerText = "REJECTED";
@@ -107,7 +107,7 @@ jobsCard.addEventListener("click", function (event) {
     calculateCount();
   }
 
-  // Step-8 {delete button logic}
+  // Step-8 {Delete button logic}
   else if (event.target.classList.contains("delete-btn")) {
     interviewList = interviewList.filter(item => item.companyName !== companyName);
     rejectedList = rejectedList.filter(item => item.companyName !== companyName);
@@ -116,8 +116,9 @@ jobsCard.addEventListener("click", function (event) {
     if (currentStatus === "rejected-btn") renderList(rejectedList);
     calculateCount();
   }
+});
 
-// Step-9 {event-delegation on filter-section}
+// Step-9 {Event-Delegation on filter-section}
 filterSection.addEventListener("click", function (event) {
   const card = event.target.closest(".card");
   if (!card) return;
@@ -126,6 +127,8 @@ filterSection.addEventListener("click", function (event) {
   const position = card.querySelector(".position").innerText;
   const location = card.querySelector(".location").innerText;
   const description = card.querySelector(".description").innerText;
+
+  // APPlY Conditions
 
   if (event.target.classList.contains("interview-btn")) {
     const jobExist = interviewList.find(item => item.companyName === companyName);
@@ -157,7 +160,8 @@ filterSection.addEventListener("click", function (event) {
     if (currentStatus === "rejected-btn") renderList(rejectedList);
     calculateCount();
   }
-})
+});
+
 // Step-10 {Render List}
 function renderList(list) {
   filterSection.innerHTML = "";
@@ -165,7 +169,7 @@ function renderList(list) {
   if (list.length === 0) {
     filterSection.innerHTML = `
       <div class="bg-white rounded-xl border border-gray-200 py-20 flex flex-col items-center justify-center text-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/9496/9496430.png" alt="No jobs" class="w-16 h-16 mb-4 opacity-60"/>
+        <img src="./image/jobs.png" alt="No jobs" class="w-16 h-16 mb-4 opacity-60"/>
         <p class="text-slate-700 text-lg font-semibold">No jobs available</p>
         <p class="text-gray-400 text-sm mt-1">Check back soon for new job opportunities</p>
       </div>`;
@@ -185,9 +189,9 @@ function renderList(list) {
       <span class="status inline-block mb-3 px-3 py-1 ${job.status === "INTERVIEW" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-600"} text-sm font-semibold rounded-md">${job.status}</span>
       <p class="description text-base text-gray-700 mb-4">${job.description}</p>
       <div class="flex gap-2 flex-wrap">
-        <button class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-50 active:bg-green-50 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
-        <button class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-400 text-red-500 font-semibold hover:bg-red-50 active:bg-red-50 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
+        <button class="interview-btn text-base px-4 py-2 rounded-sm border border-green-500 text-green-600 font-semibold hover:bg-green-300 active:bg-green-200 transition-colors sm:flex-none flex-1 text-center">INTERVIEW</button>
+        <button class="rejected-btn text-base px-4 py-2 rounded-sm border border-red-500 text-red-600 font-semibold hover:bg-red-300 active:bg-red-200 transition-colors sm:flex-none flex-1 text-center">REJECTED</button>
       </div>`;
     filterSection.appendChild(div);
   }
-  } 
+}
