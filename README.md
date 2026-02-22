@@ -65,9 +65,96 @@ To create and insert a new element in the DOM, first of all we use document.crea
 Example:
 const newDiv = document.createElement("div");
 newDiv.innerText = "I replaced the old element";
-document.body.replaceChild(newDiv, ref);
+document.body.replaceChild(newDiv, ref);(JS)
 
 const p = document.createElement("p");
 p.innerText = "Last child";
-document.body.appendChild(p);
+document.body.appendChild(p);(JS)
+
+### 3. What is Event Bubbling? And how does it work?
+3️⃣Event Bubbling
+
+Event Bubbling is when an event in the DOM starts from the innermost element and moves up to the outer elements.
+For example, if we click on an element, the event happens on that element first, then goes to its parent, then the parent’s parent, and so on, up to the <html> element.
+This means both the element you clicked and its parents can respond to the same event.
+
+Example:
+ HTML--->
+<div id="parent" style="padding:20px; background-color:lightblue;">
+  Parent Div
+  <button id="child">Click Me</button>
+</div>
+ JavaScript-->
+ const parent = document.getElementById("parent");
+const child = document.getElementById("child");
+
+child.addEventListener("click", () => {
+  console.log("Button clicked");
+});
+
+parent.addEventListener("click", () => {
+  console.log("Parent Div clicked");
+});
+
+### 4. What is Event Delegation in JavaScript? Why is it useful?
+4️⃣Event Delegation in JavaScript and it's usefulness:
+Event Delegation is a technique where we attach a single event listener to a parent element instead of adding separate listeners to multiple child elements.
+The parent listens for events on its children, and we can use the event object to figure out which child triggered the event.
+Why it’s useful:
+We don’t have to add many event listeners to each child element.
+It works even if new child elements are added dynamically.
+It improves performance and makes code simpler.
+
+Example:
+HTML-->
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+JavaScript-->
+const list = document.getElementById("list");
+list.addEventListener("click", (event) => {
+  console.log("Clicked:", event.target.innerText);
+});
+
+### 5. What is the difference between preventDefault() and stopPropagation() methods?
+
+5️⃣Difference between preventDefault() and stopPropagation():
+##preventDefault()
+Stops the normal behavior of an element from happening.
+Example: a link won’t open, or a form won’t submit when clicked.
+
+##stopPropagation()
+Stops an event from moving up (bubbling) or down (capturing) the DOM.
+Example: clicking a button inside a div triggers only the button’s event, not the div’s.
+
+Example:
+<a href="https://example.com" id="link">Go to Example</a>(HTML)
+const link = document.getElementById("link");
+link.addEventListener("click", (e) => {
+  e.preventDefault(); // stops link from opening
+  console.log("Link click prevented!");
+});
+
+<div id="box" style="padding:20px; background-color:lightblue;">
+  Parent Div
+  <button id="btn">Click Me</button>
+</div> (HTML)
+
+const box = document.getElementById("box");
+const btn = document.getElementById("btn");
+
+box.addEventListener("click", () => {
+  console.log("Div clicked!");
+});(JS)
+<div id="box" style="padding:20px; background-color:lightblue;">
+  Parent Div
+  <button id="btn">Click Me</button>
+</div> (HTML)
+
+btn.addEventListener("click", (e) => {
+  e.stopPropagation(); // stops div from reacting
+  console.log("Button clicked!");
+}); (JS)
 
